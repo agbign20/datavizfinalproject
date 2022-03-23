@@ -1,0 +1,44 @@
+---
+title: "StaticVersionFinalProject"
+author: "Alyssa Bigness"
+date: "3/23/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(shiny)
+
+
+mlbsalary_df <- read_xlsx(path = "data/MLBPlayerSalaries.xlsx")
+
+mlbsalary_late80s <- 
+  mlbsalary_df %>%
+  filter(.,
+         Year == "1988" | Year == "1989") %>%
+  mutate(.,
+         Player = fct_reorder(Player, Salary)) %>%
+  filter(.,
+         Team == "Los Angeles Angels")
+
+ggplot(data = mlbsalary_late80s,
+           aes(x = Player,
+               y = Salary)) + geom_col() + coord_flip()
+  
+
+
+
+```
+
+
+
+
+
+things to do 
+- change the salary into per thousands or millions
+- either split into every two years or slice the number of players

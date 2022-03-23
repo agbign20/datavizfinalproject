@@ -11,36 +11,48 @@ mlbsalary_df <- read_xlsx(path = "data/MLBPlayerSalaries.xlsx")
 mlbsalary_late80s <- 
   mlbsalary_df %>%
   filter(.,
-         Year == "1988" | Year == "1989")
+         Year == "1988" | Year == "1989") %>%
+  mutate(.,
+         Player = fct_reorder(Player, Salary))
   
 mlbsalary_early90s <-
   mlbsalary_df %>% 
   filter(.,
          Year == "1990" | Year == "1991" | Year == "1992" | Year == "1993" |
-           Year == "1994")
+           Year == "1994") %>%
+  mutate(.,
+         Player = fct_reorder(Player, Salary))
   
 mlbsalary_late90s <-
   mlbsalary_df %>% 
   filter(.,
          Year == "1995" | Year == "1996" | Year == "1997" | Year == "1998" |
-           Year == "1999")
+           Year == "1999")  %>%
+  mutate(.,
+         Player = fct_reorder(Player, Salary))
   
 mlbsalary_early00s <-
   mlbsalary_df %>% 
   filter(.,
          Year == "2000" | Year == "2001" | Year == "2002" | Year == "2003" |
-           Year == "2004")
+           Year == "2004")  %>%
+  mutate(.,
+         Player = fct_reorder(Player, Salary))
   
 mlbsalary_late00s <-
   mlbsalary_df %>% 
   filter(.,
          Year == "2005" | Year == "2006" | Year == "2007" | Year == "2008" |
-           Year == "2009")
+           Year == "2009")  %>%
+  mutate(.,
+         Player = fct_reorder(Player, Salary))
   
 mlbsalary_early10s <-
   mlbsalary_df %>% 
   filter(.,
-         Year == "2010" | Year == "2011")
+         Year == "2010" | Year == "2011")  %>%
+  mutate(.,
+         Player = fct_reorder(Player, Salary))
 
 
 
@@ -175,6 +187,22 @@ server <- function(input, output, session) {
   
   output$colgraph_early90s <- renderPlot({
     col_plot_early90s()
+  })
+  
+  output$colgraph_late90s <- renderPlot({
+    col_plot_late90s()
+  })
+  
+  output$colgraph_early00s <- renderPlot({
+    col_plot_early00s()
+  })
+  
+  output$colgraph_late00s <- renderPlot({
+    col_plot_late00s()
+  })
+  
+  output$colgraph_early10s <- renderPlot({
+    col_plot_early10s()
   })
   
 }
