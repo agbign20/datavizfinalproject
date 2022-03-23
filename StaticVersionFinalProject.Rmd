@@ -40,5 +40,5 @@ ggplot(data = mlbsalary_late80s,
 
 
 things to do 
-- change the salary into per thousands or millions
 - either split into every two years or slice the number of players
+- make the graph change when the team chosen changes
