@@ -7,3 +7,9 @@ I found a data set for my final project containing a MLB data set. I loaded in t
 ## March 23 End of Class
 
 I continued creating the shiny app for the MLB data set. I also have problems with reordering the players according to their salary. I attempted to fix this while working on my project.
+
+
+## March 28 Beginning of Class
+
+I played around with the tab panel layout on my shiny app and in the end decided to leave it in intervals of 1 year with the last tab allowing users to customize the years they want to look at.
+
