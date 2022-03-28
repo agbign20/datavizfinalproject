@@ -204,7 +204,7 @@ mlbsalary_11 <-
 # Create the shiny app using mlbsalary_df
 
 ui <- fluidPage(h1("MLB Data Set"),
-  navlistPanel(
+  tabsetPanel(
     tabPanel("1988", 
              sidebarLayout(
                sidebarPanel(
@@ -589,7 +589,8 @@ server <- function(input, output, session) {
   
   mlbsalary_cust_sub <- reactive({
     mlbsalary_df %>% filter(Team == input$TeamChoiceCust,
-                            Year == input$ChooseYear)
+                            Year == input$ChooseYear) %>%
+      slice(1:25)
   })
   
 
@@ -769,11 +770,19 @@ server <- function(input, output, session) {
       ylab("Salary per Million")
   })
   
+  graph_plot_88 <- reactive({
+    ggplot(data = mlbsalary_cust_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
 
-  
   
   output$colgraph_88 <- renderPlot({
     col_plot_88()
+  })
+  
+  output$graphposition_88 <- renderPlot({
+    graph_plot_88
   })
   
   output$colgraph_89 <- renderPlot({

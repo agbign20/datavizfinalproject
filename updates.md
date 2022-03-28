@@ -13,3 +13,7 @@ I continued creating the shiny app for the MLB data set. I also have problems wi
 
 I played around with the tab panel layout on my shiny app and in the end decided to leave it in intervals of 1 year with the last tab allowing users to customize the years they want to look at.
 
+
+## March 28 End of Class
+
+I tried fixing the year filter model for the customized years. I also tried seeing if there is a way to extend the shiny app window in order to see the app more clearly, but decided that the tabset panel was better than the navlist panel.
