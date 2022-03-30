@@ -17,3 +17,8 @@ I played around with the tab panel layout on my shiny app and in the end decided
 ## March 28 End of Class
 
 I tried fixing the year filter model for the customized years. I also tried seeing if there is a way to extend the shiny app window in order to see the app more clearly, but decided that the tabset panel was better than the navlist panel.
+
+
+## March 30 Beginning of Class
+
+I started creating another graph with the position of the team with the number of players in that position. It will not show in the shiny app right now. I also tried working on the customized years tab panel but I still couldn't fix it.

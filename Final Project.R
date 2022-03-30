@@ -771,7 +771,145 @@ server <- function(input, output, session) {
   })
   
   graph_plot_88 <- reactive({
-    ggplot(data = mlbsalary_cust_sub(),
+    ggplot(data = mlbsalary_88_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_89 <- reactive({
+    ggplot(data = mlbsalary_89_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_90 <- reactive({
+    ggplot(data = mlbsalary_90_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_91 <- reactive({
+    ggplot(data = mlbsalary_91_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_92 <- reactive({
+    ggplot(data = mlbsalary_92_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_93 <- reactive({
+    ggplot(data = mlbsalary_93_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_94 <- reactive({
+    ggplot(data = mlbsalary_94_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_95 <- reactive({
+    ggplot(data = mlbsalary_95_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_96 <- reactive({
+    ggplot(data = mlbsalary_96_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_97 <- reactive({
+    ggplot(data = mlbsalary_97_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_98 <- reactive({
+    ggplot(data = mlbsalary_98_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_99 <- reactive({
+    ggplot(data = mlbsalary_99_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_00 <- reactive({
+    ggplot(data = mlbsalary_00_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_01 <- reactive({
+    ggplot(data = mlbsalary_01_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_02 <- reactive({
+    ggplot(data = mlbsalary_02_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_03 <- reactive({
+    ggplot(data = mlbsalary_03_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_04 <- reactive({
+    ggplot(data = mlbsalary_04_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_05 <- reactive({
+    ggplot(data = mlbsalary_05_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_06 <- reactive({
+    ggplot(data = mlbsalary_06_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_07 <- reactive({
+    ggplot(data = mlbsalary_07_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_08 <- reactive({
+    ggplot(data = mlbsalary_08_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_09 <- reactive({
+    ggplot(data = mlbsalary_09_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_10 <- reactive({
+    ggplot(data = mlbsalary_10_sub(),
+           aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
+      coord_flip() + ylab("Number of Players")
+  })
+  
+  graph_plot_11 <- reactive({
+    ggplot(data = mlbsalary_11_sub(),
            aes(x = Position)) + geom_histogram(color = "black", fill = "white") + 
       coord_flip() + ylab("Number of Players")
   })
@@ -779,10 +917,6 @@ server <- function(input, output, session) {
   
   output$colgraph_88 <- renderPlot({
     col_plot_88()
-  })
-  
-  output$graphposition_88 <- renderPlot({
-    graph_plot_88
   })
   
   output$colgraph_89 <- renderPlot({
@@ -881,6 +1015,98 @@ server <- function(input, output, session) {
     col_plot_cust()
   })
   
+  
+  output$graphposition_88 <- renderPlot({
+    graph_plot_88
+  })
+  
+  output$graphposition_89 <- renderPlot({
+    graph_plot_89
+  })
+  
+  output$graphposition_90 <- renderPlot({
+    graph_plot_90
+  })
+  
+  output$graphposition_91 <- renderPlot({
+    graph_plot_91
+  })
+  
+  output$graphposition_92 <- renderPlot({
+    graph_plot_92
+  })
+  
+  output$graphposition_93 <- renderPlot({
+    graph_plot_93
+  })
+  
+  output$graphposition_94 <- renderPlot({
+    graph_plot_94
+  })
+  
+  output$graphposition_95 <- renderPlot({
+    graph_plot_95
+  })
+  
+  output$graphposition_96 <- renderPlot({
+    graph_plot_96
+  })
+  
+  output$graphposition_97 <- renderPlot({
+    graph_plot_97
+  })
+  
+  output$graphposition_98 <- renderPlot({
+    graph_plot_98
+  })
+  
+  output$graphposition_99 <- renderPlot({
+    graph_plot_99
+  })
+  
+  output$graphposition_00 <- renderPlot({
+    graph_plot_00
+  })
+  
+  output$graphposition_01 <- renderPlot({
+    graph_plot_01
+  })
+  
+  output$graphposition_02 <- renderPlot({
+    graph_plot_02
+  })
+  
+  output$graphposition_03 <- renderPlot({
+    graph_plot_03
+  })
+  
+  output$graphposition_04 <- renderPlot({
+    graph_plot_04
+  })
+  
+  output$graphposition_05 <- renderPlot({
+    graph_plot_05
+  })
+  
+  output$graphposition_06 <- renderPlot({
+    graph_plot_06
+  })
+  
+  output$graphposition_07 <- renderPlot({
+    graph_plot_07
+  })
+  
+  output$graphposition_08 <- renderPlot({
+    graph_plot_08
+  })
+  
+  output$graphposition_09 <- renderPlot({
+    graph_plot_09
+  })
+  
+  output$graphposition_10 <- renderPlot({
+    graph_plot_10
+  })
 
   
 }
