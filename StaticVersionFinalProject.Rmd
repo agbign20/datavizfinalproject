@@ -35,10 +35,74 @@ ggplot(data = mlbsalary_late80s,
 
 ```
 
+```{r}
+mlbsalary_df <- read_xlsx(path = "data/MLBPlayerSalaries.xlsx")
+
+library(tidyverse)
+test_df <- tibble(position_type = c("A", "A", "B", "B", "C", "D", "A"))
+test_df %>% group_by(position_type) %>%
+  summarise(nplayers = n())
+
+# problem fixed
+mlbsalary_88 <- 
+  mlbsalary_df %>%
+  filter(.,
+         Year == "1988",
+         Team == "Los Angeles Angels") %>%
+  group_by(Position) %>%
+  summarize(.,
+            nPlayers = n()) %>%
+  mutate(.,
+         Position = fct_reorder(Position, nPlayers)) 
+
+ggplot(data = mlbsalary_88,
+           aes(x = Position, y = nPlayers)) + geom_bar(color = "black", fill = "white", stat = "identity") + 
+      coord_flip() + ylab("Number of Players") + 
+  
+```
+
+
+```{r}
+mlbsalary_sub <-
+    mlb_df %>% filter(.,
+                      Year == "1988",
+                      Team == "Boston Red Sox" |
+                        Team == "Los Angeles Angels" |
+                        Team == "New York Yankees") %>%
+      mutate(.,
+             Player = fct_reorder(Player, Salary),
+             Salary = Salary/1000000) %>%
+      slice(1:35)
+
+ggplot(data = mlbsalary_sub,
+           aes(x = Player,
+               y = Salary)) + geom_col(aes(fill = Team), color = "black") + 
+      geom_hline(aes(yintercept = mean(Salary)), color = "black", linetype = 2, size = 1.25) + coord_flip() + 
+      ylab("Salary per Million") + theme_bw()
+```
+
+
+```{r}
+mlbpositions_sub <-
+    mlb_df %>% filter(.,
+                      Year == "2011",
+                      Team == "Boston Red Sox" | Team == "New York Yankees" | Team == "Los Angeles Angels") %>%
+      group_by(Team, Position) %>%
+      summarize(.,
+                nPlayers = n())
+
+ggplot(data = mlbpositions_sub,
+           aes(x = fct_reorder(Position, nPlayers), y = nPlayers)) + geom_bar(aes(fill = Team), color = "black", stat = "identity", position = "dodge") + 
+      coord_flip() + ylab("Number of Players") + xlab("Positions") 
+```
 
 
 
 
 things to do 
-- either split into every two years or slice the number of players
-- make the graph change when the team chosen changes
+- change axis labels
+- change the colors
+- fix the labels for the slicing input
+- create max for comparing teams
+
+

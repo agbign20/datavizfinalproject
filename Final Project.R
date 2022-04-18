@@ -57,12 +57,11 @@ server <- function(input, output, session) {
   })
   
   
-  
   col_plot <- reactive({
     ggplot(data = mlbsalary_sub(),
            aes(x = Player,
                y = Salary)) + geom_col(aes(fill = Team), color = "black") + 
-      geom_hline(aes(yintercept = mean(Salary)), color = "red", linetype = 2) + coord_flip() + 
+      geom_hline(aes(yintercept = mean(Salary)), color = "black", linetype = 2, size = 1.25) + coord_flip() + 
       ylab("Salary per Million") + theme_bw()
   })
   
