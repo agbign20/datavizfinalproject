@@ -86,8 +86,8 @@ ggplot(data = mlbsalary_sub,
 library(RColorBrewer)
 mlbpositions_sub <-
     mlb_df %>% filter(.,
-                      Year == "2011",
-                      Team == "Boston Red Sox" | Team == "New York Yankees" | Team == "Los Angeles Angels") %>%
+                      Year == "1988",
+                      Team == "Los Angeles Angels" | Team == "Boston Red Sox"  | Team == "Chicago Cubs" ) %>%
       group_by(Team, Position) %>%
       summarize(.,
                 nPlayers = n())
@@ -102,8 +102,7 @@ ggplot(data = mlbpositions_sub,
 
 
 things to do 
-- change axis labels
-- fix slicing problem
-- fix theme input
+- create theme input for graph for users
+- write a little paragraph in the sidebar explaining what this project is showing
 
 

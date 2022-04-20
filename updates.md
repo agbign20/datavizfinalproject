@@ -72,3 +72,8 @@ I fixed the geom_bar so the dodge position shows how many players are in each po
 
 I tried fixing the slicing problems I am having for the salary because the ordering does not seem to be correct. It seems to only get remove the other teams that I add to the input. Then I changed the colors to a brewer palette. I tried creating an input for users to choose a theme but also ran into problems.
 
+
+## April 20 End of Class
+
+I fixed the slicing problem for the salary graph. I created a theme customizer for users to choose their main color theme as well as accent color for the page. I also fixed the graphing problems I had in positions graph.
+

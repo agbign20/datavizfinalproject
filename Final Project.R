@@ -5,11 +5,13 @@ library(tidyverse)
 library(readxl)
 library(shiny)
 library(RColorBrewer)
+library(bslib)
+thematic:: thematic_shiny(font = "auto")
 
 
 mlb_df <- read_xlsx(path = "data/MLBPlayerSalaries.xlsx")
 
-ui <- fluidPage(h1(strong("MLB Dataset")),
+ui <- fluidPage(theme = bs_theme(), h1(strong("MLB Dataset")),
   sidebarLayout(
     sidebarPanel(
                  selectizeInput(inputId = "TeamChoice",
@@ -45,6 +47,8 @@ ui <- fluidPage(h1(strong("MLB Dataset")),
 ))
 
 server <- function(input, output, session) {
+  bs_themer()
+  
   mlbsalary_sub <- reactive({
     mlb_df %>% filter(.,
                       Year == input$YearChoice,
@@ -52,13 +56,14 @@ server <- function(input, output, session) {
       mutate(.,
              Player = fct_reorder(Player, Salary),
              Salary = Salary/1000000) %>%
+      arrange(desc(Salary)) %>%
       slice(input$TopSlice:input$BottomSlice)
   })
   
   mlbpositions_sub <- reactive({
     mlb_df %>% filter(.,
                       Year == input$YearChoice,
-                      Team == input$TeamChoice) %>%
+                      Team %in% input$TeamChoice) %>%
       group_by(Team, Position) %>%
       summarize(.,
                 nPlayers = n())
@@ -70,13 +75,19 @@ server <- function(input, output, session) {
            aes(x = Player,
                y = Salary)) + geom_col(aes(fill = Team), color = "black") + 
       geom_hline(aes(yintercept = mean(Salary)), color = "black", linetype = 2, size = 1.25) + coord_flip() + 
-      ylab("Salary per Million") + theme_bw() + scale_fill_brewer(palette = "Set2")
+      ylab("Salary per Million") + theme_bw() + scale_fill_brewer(palette = "Set2") + theme(text = element_text(size = 18),
+                                                                                                  axis.text.x = element_text(size = 15),
+                                                                                                  axis.text.y = element_text(size = 15))
   })
   
   graph_plot <- reactive({
     ggplot(data = mlbpositions_sub(),
            aes(x = fct_reorder(Position, nPlayers), y = nPlayers)) + geom_bar(aes(fill = Team), color = "black", stat = "identity", position = "dodge") + 
-      coord_flip() + ylab("Number of Players") + xlab("Positions") + theme_bw() + scale_fill_brewer(palette = "Set2")
+      coord_flip() + ylab("Number of Players") + xlab("Positions") + theme_bw() + scale_fill_brewer(palette = "Set2") + theme(text = element_text(size = 18),
+                                                                                                                              axis.text.x = element_text(size = 15),
+                                                                                                                              axis.text.y = element_text(size = 15)) +
+      scale_y_continuous(breaks = seq(0, 16, 2))
+                                                                                                  
    
   })
   
