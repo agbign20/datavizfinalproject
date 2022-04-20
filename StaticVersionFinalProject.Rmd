@@ -83,6 +83,7 @@ ggplot(data = mlbsalary_sub,
 
 
 ```{r}
+library(RColorBrewer)
 mlbpositions_sub <-
     mlb_df %>% filter(.,
                       Year == "2011",
@@ -93,7 +94,8 @@ mlbpositions_sub <-
 
 ggplot(data = mlbpositions_sub,
            aes(x = fct_reorder(Position, nPlayers), y = nPlayers)) + geom_bar(aes(fill = Team), color = "black", stat = "identity", position = "dodge") + 
-      coord_flip() + ylab("Number of Players") + xlab("Positions") 
+      coord_flip() + ylab("Number of Players") + xlab("Positions") +
+  scale_fill_brewer(palette = "Set2")
 ```
 
 
@@ -101,8 +103,7 @@ ggplot(data = mlbpositions_sub,
 
 things to do 
 - change axis labels
-- change the colors
-- fix the labels for the slicing input
-- create max for comparing teams
+- fix slicing problem
+- fix theme input
 
 

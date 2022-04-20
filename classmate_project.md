@@ -15,3 +15,5 @@ I discussed my final project with Amiel. His project consists of a NHL data set,
 
 ## April 18
 I discussed my final project with Claire. Her project consists of a Breweries Map data set, where she plans to make a shiny app to allow users to look for a brewery in the United States. Also, she allows users to choose a type of brewery to search country wide for those specific types of breweries.
+
+##

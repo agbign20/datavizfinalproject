@@ -4,6 +4,7 @@
 library(tidyverse)
 library(readxl)
 library(shiny)
+library(RColorBrewer)
 
 
 mlb_df <- read_xlsx(path = "data/MLBPlayerSalaries.xlsx")
@@ -31,6 +32,13 @@ ui <- fluidPage(h1(strong("MLB Dataset")),
                               min = 1,
                               max = 30,
                               value = 20)),
+                 #selectizeInput(inputID = "ThemeChoice",
+                                #label = "Choose a Theme",
+                                #choices = c(theme_bw(), theme_classic(),
+                                            #theme_dark(), theme_gray(),
+                                            #theme_linedraw(), theme_light(),
+                                            #theme_minimal()),
+                                #selected = theme_bw())),
     mainPanel(plotOutput("colgraph"),
               plotOutput("graphposition"))
   
@@ -62,13 +70,13 @@ server <- function(input, output, session) {
            aes(x = Player,
                y = Salary)) + geom_col(aes(fill = Team), color = "black") + 
       geom_hline(aes(yintercept = mean(Salary)), color = "black", linetype = 2, size = 1.25) + coord_flip() + 
-      ylab("Salary per Million") + theme_bw()
+      ylab("Salary per Million") + theme_bw() + scale_fill_brewer(palette = "Set2")
   })
   
   graph_plot <- reactive({
     ggplot(data = mlbpositions_sub(),
            aes(x = fct_reorder(Position, nPlayers), y = nPlayers)) + geom_bar(aes(fill = Team), color = "black", stat = "identity", position = "dodge") + 
-      coord_flip() + ylab("Number of Players") + xlab("Positions") + theme_bw()
+      coord_flip() + ylab("Number of Players") + xlab("Positions") + theme_bw() + scale_fill_brewer(palette = "Set2")
    
   })
   

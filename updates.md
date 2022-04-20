@@ -66,3 +66,9 @@ I tried figuring out why the graphs were not showing up when I selected differen
 ## April 18 End of Class
 
 I fixed the geom_bar so the dodge position shows how many players are in each position. I also added the fill = Team for both graphs so that when the user chooses multiple teams, they can see which team has higher salary or more players in that position.
+
+
+## April 20 Beginning of Class
+
+I tried fixing the slicing problems I am having for the salary because the ordering does not seem to be correct. It seems to only get remove the other teams that I add to the input. Then I changed the colors to a brewer palette. I tried creating an input for users to choose a theme but also ran into problems.
+
