@@ -18,3 +18,6 @@ I discussed my final project with Claire. Her project consists of a Breweries Ma
 
 ## April 20 
 I discussed my final project with another girl name Claire. Not sure. Her project consists of NHL data set, where she plans to make a shiny app to allow users to make choices in order to see the predicted win/loss versus if it was actually a win/loss.
+
+## April 25
+I discussed my project with Alex. His project consists of a NFL dataset, where he plans to create a shiny app that allow users to write inputs for certain player predictions of their stats.
