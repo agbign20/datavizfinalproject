@@ -77,3 +77,7 @@ I tried fixing the slicing problems I am having for the salary because the order
 
 I fixed the slicing problem for the salary graph. I created a theme customizer for users to choose their main color theme as well as accent color for the page. I also fixed the graphing problems I had in positions graph.
 
+
+## April 25 Beginning of Class
+
+I tried figuring out why the theme for the graphs specifically was not working but could not find out how. I also wrote a paragraph in the sidebar panel explaining what the graphs are showing.

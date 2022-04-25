@@ -13,7 +13,12 @@ mlb_df <- read_xlsx(path = "data/MLBPlayerSalaries.xlsx")
 
 ui <- fluidPage(theme = bs_theme(), h1(strong("MLB Dataset")),
   sidebarLayout(
-    sidebarPanel(
+    sidebarPanel(HTML("<p>This data presents an MLB dataset from 1988 to 2011,
+                      with the top graph displaying the top players' salaries
+                      from the team(s) chosen, the dotted vertical line
+                      representing the team(s) chosen's mean salary, and the
+                      bottom graph displaying the number of players in each
+                      position from the team(s) chosen.</p>"),
                  selectizeInput(inputId = "TeamChoice",
                                 label = "Choose a MLB Team",
                                 choices = levels(
@@ -34,13 +39,13 @@ ui <- fluidPage(theme = bs_theme(), h1(strong("MLB Dataset")),
                               min = 1,
                               max = 30,
                               value = 20)),
-                 #selectizeInput(inputID = "ThemeChoice",
+                 #selectInput(inputID = "ThemeChoice",
                                 #label = "Choose a Theme",
-                                #choices = c(theme_bw(), theme_classic(),
-                                            #theme_dark(), theme_gray(),
-                                            #theme_linedraw(), theme_light(),
-                                            #theme_minimal()),
-                                #selected = theme_bw())),
+                                #choices = c("theme_bw", "theme_classic",
+                                #            "theme_dark()", "theme_gray",
+                                #            "theme_light",
+                                #            "theme_minimal"),
+                                #selected = "theme_bw")),
     mainPanel(plotOutput("colgraph"),
               plotOutput("graphposition"))
   
