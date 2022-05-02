@@ -82,6 +82,12 @@ I fixed the slicing problem for the salary graph. I created a theme customizer f
 
 I tried figuring out why the theme for the graphs specifically was not working but could not find out how. I also wrote a paragraph in the sidebar panel explaining what the graphs are showing.
 
+
 ## April 25 End of Class
 
 I tried fixing the theme for the graphs until I realized that I did not need to fix it in the first place. I also created a max option for the team choice.
+
+
+## May 2 Beginning of Class
+
+I started wrapping up the app by cleaning up the graphs and titles for the shiny app and the graphs. I also played around the graph to make sure there are no errors and to make sure the app is finalized.

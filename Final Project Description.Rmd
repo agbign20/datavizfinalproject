@@ -1,0 +1,14 @@
+---
+title: "Final Project Description"
+author: "Alyssa Bigness"
+date: "4/30/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+  My Data Visualization final project is a shiny app using a Major League Baseball dataset. The general purpose of my shiny app is to allow users to choose up to a max of four Major League Baseball teams, choose a year between 1988 and 2011, choose the top slicing component, choose the bottom slicing component, and choose the theme of the whole shiny app page, in order to see the Top Salaries for Select Year and Teams and the Number of Players in MLB Positions.
+	The bar graph at the top of the shiny app shows the top salaries of players from those chosen teams and chosen year. The top salaries of the players rank the players with the highest salary to the lowest salary based on the slicing input component. The bottom slicing input for the salary plot allows users to choose the number of players shown on the graph, while top slice input for the salary plot allows users to choose the top salary of that top number player until the bottom slice input. The bar graph at the bottom of the shiny app shows the number of players in each position for the teams chosen and the year chosen. The number of players in the Major League Baseball positions is ranked from the highest number of players to the lowest number of players. There is also a theme customizer in the top right corner that allows users to choose a theme for the whole shiny app, change the main colors as well as the accent colors, and the font size on the shiny app.
+	The shiny app for the final project relates to the concepts discussed in the first half of the semester in several ways. The final project is a shiny app which was a major topic of the data visualization class. The colors used on the app for the graphs are great for users that have difficult understanding graphs with color. The graphs are easy to comprehend and very useful information for users to learn about. Finally, I showed the average salary of all the players in the top bar graph to show the mean salary in comparison to all players shown.

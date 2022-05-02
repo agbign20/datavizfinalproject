@@ -102,7 +102,7 @@ ggplot(data = mlbpositions_sub,
 
 
 things to do 
-- create theme input for graph for users
-- write a little paragraph in the sidebar explaining what this project is showing
+- add text to graph
+
 
 

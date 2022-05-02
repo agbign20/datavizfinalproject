@@ -11,7 +11,8 @@ thematic:: thematic_shiny(font = "auto")
 
 mlb_df <- read_xlsx(path = "data/MLBPlayerSalaries.xlsx")
 
-ui <- fluidPage(theme = bs_theme(), h1(strong("MLB Dataset")),
+ui <- fluidPage(theme = bs_theme(), 
+                h1(strong("Major League Baseball App")),
   sidebarLayout(
     sidebarPanel(HTML("<p>This data presents an MLB dataset from 1988 to 2011,
                       with the top graph displaying the top players' salaries
@@ -72,15 +73,20 @@ server <- function(input, output, session) {
            aes(x = Player,
                y = Salary)) + geom_col(aes(fill = Team), color = "black") + 
       geom_hline(aes(yintercept = mean(Salary)), color = "black", linetype = 2, size = 1.25) + coord_flip() + 
-      ylab("Salary per Million") + input$ThemeChoice + scale_fill_brewer(palette = "Set2") + theme(text = element_text(size = 18),
+      labs(title = "Top Salaries for Select Year and Teams", 
+           y = "Salary (per Million Dollars)",
+           fill = "Team(s) Chosen") + theme_bw() + scale_fill_brewer(palette = "Set2") + theme(text = element_text(size = 18),
                                                                                                   axis.text.x = element_text(size = 15),
-                                                                                                  axis.text.y = element_text(size = 15))
+                                                                                                  axis.text.y = element_text(size = 15)) 
   })
   
   graph_plot <- reactive({
     ggplot(data = mlbpositions_sub(),
            aes(x = fct_reorder(Position, nPlayers), y = nPlayers)) + geom_bar(aes(fill = Team), color = "black", stat = "identity", position = "dodge") + 
-      coord_flip() + ylab("Number of Players") + xlab("Positions") + input$ThemeChoice + scale_fill_brewer(palette = "Set2") + theme(text = element_text(size = 18),
+      coord_flip() + labs(x = "Positions",
+                          y = "Number of Players",
+                          title = "Number of Players in MLB Positions",
+                          fill = "Team(s) Chosen") + theme_bw() + scale_fill_brewer(palette = "Set2") + theme(text = element_text(size = 18),
                                                                                                                               axis.text.x = element_text(size = 15),
                                                                                                                               axis.text.y = element_text(size = 15)) +
       scale_y_continuous(breaks = seq(0, 16, 2))
