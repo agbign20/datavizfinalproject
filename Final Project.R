@@ -75,9 +75,9 @@ server <- function(input, output, session) {
       geom_hline(aes(yintercept = mean(Salary)), color = "black", linetype = 2, size = 1.25) + coord_flip() + 
       labs(title = "Top Salaries for Select Year and Teams", 
            y = "Salary (per Million Dollars)",
-           fill = "Team(s) Chosen") + theme_bw() + scale_fill_brewer(palette = "Set2") + theme(text = element_text(size = 18),
-                                                                                                  axis.text.x = element_text(size = 15),
-                                                                                                  axis.text.y = element_text(size = 15)) 
+           fill = "Team(s) Chosen") + theme_bw() + scale_fill_brewer(palette = "Set2") + theme(text = element_text(size = 20),
+                                                                                                  axis.text.x = element_text(size = 18),
+                                                                                                  axis.text.y = element_text(size = 18)) 
   })
   
   graph_plot <- reactive({
@@ -86,9 +86,9 @@ server <- function(input, output, session) {
       coord_flip() + labs(x = "Positions",
                           y = "Number of Players",
                           title = "Number of Players in MLB Positions",
-                          fill = "Team(s) Chosen") + theme_bw() + scale_fill_brewer(palette = "Set2") + theme(text = element_text(size = 18),
-                                                                                                                              axis.text.x = element_text(size = 15),
-                                                                                                                              axis.text.y = element_text(size = 15)) +
+                          fill = "Team(s) Chosen") + theme_bw() + scale_fill_brewer(palette = "Set2") + theme(text = element_text(size = 20),
+                                                                                                                              axis.text.x = element_text(size = 18),
+                                                                                                                              axis.text.y = element_text(size = 18)) +
       scale_y_continuous(breaks = seq(0, 16, 2))
                                                                                                   
    
