@@ -94,7 +94,7 @@ server <- function(input, output, session) {
    
   })
   
-  
+   
   output$colgraph <- renderPlot({
     col_plot()
   })
